@@ -15,7 +15,7 @@ add_dir = "../03_rasterise_hab_edits/gmw_hab_adds"
 rm_dir = "../03_rasterise_hab_edits/gmw_hab_rms"
 old_hab_dir = "../02_rasterise_hab_mask/gmw_hab_tiles"
 
-gmw_hab_prev_version = "v10"
+gmw_hab_prev_version = "v9"
 gmw_hab_edit_version = "v9_to_v10"
 gmw_hab_new_version = "v10"
 
@@ -38,7 +38,7 @@ for tile in tiles:
         band_defns.append(rsgislib.imagecalc.BandDefn("add", add_img, 1))
         band_defns.append(rsgislib.imagecalc.BandDefn("rm", rm_img, 1))
         rsgislib.imagecalc.band_math(
-            out_img, "add==1?1:rm==1:0:hab", "GTIFF", rsgislib.TYPE_8UINT, band_defns
+            out_img, "add==1?1:rm==1?0:hab", "GTIFF", rsgislib.TYPE_8UINT, band_defns
         )
         rsgislib.imageutils.pop_thmt_img_stats(
             out_img, add_clr_tab=True, calc_pyramids=True, ignore_zero=True
