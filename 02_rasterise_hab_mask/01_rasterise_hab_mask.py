@@ -1,9 +1,9 @@
 import os
 
 import rsgislib
+import rsgislib.imageutils
 import rsgislib.vectorattrs
 import rsgislib.vectorutils.createrasters
-import rsgislib.imageutils
 
 rsgislib.imageutils.set_env_vars_lzw_gtiff_outs()
 
