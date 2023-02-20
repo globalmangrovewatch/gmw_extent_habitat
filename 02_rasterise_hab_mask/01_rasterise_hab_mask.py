@@ -53,9 +53,6 @@ for tile in tiles:
     base_img = os.path.join(base_tiles_dir, f"{tile}.tif")
     out_img = os.path.join(out_dir, f"gmw_{tile}_hab_{gmw_hab_version}.tif")
     if not os.path.exists(out_img):
-        tile_params.append([vec_lyr_obj, base_img, out_img])
-
-with Pool(10) as p:
-    print(p.map(rasterise_vec_to_tile, tile_params))
+        rasterise_vec_to_tile([vec_lyr_obj, base_img, out_img])
 
 vec_ds_obj = None
