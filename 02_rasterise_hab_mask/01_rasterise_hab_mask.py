@@ -1,5 +1,5 @@
 import os
-from multiprocessing import Pool
+
 import rsgislib
 import rsgislib.vectorattrs
 import rsgislib.vectorutils.createrasters
