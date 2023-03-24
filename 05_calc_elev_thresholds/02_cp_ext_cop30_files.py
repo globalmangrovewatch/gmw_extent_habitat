@@ -37,7 +37,7 @@ for cop_dem_tile in tqdm.tqdm(cop_dem_tiles):
 os.chdir(c_dir)
 print(failed_scns)
 print(no_scn)
-rsgislib.tools.utils.write_list_to_file(failed_scns, "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/cop_30_dem_gmw_tiles_fails.txt")
-rsgislib.tools.utils.write_list_to_file(no_scn, "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/cop_30_dem_gmw_tiles_not_avail.txt")
+rsgislib.tools.utils.write_list_to_file(failed_scns, "cop_30_dem_gmw_tiles_fails.txt")
+rsgislib.tools.utils.write_list_to_file(no_scn, "cop_30_dem_gmw_tiles_not_avail.txt")
 
 
