@@ -28,6 +28,9 @@ for cop_dem_tile in tqdm.tqdm(cop_dem_tiles):
             try:
                 rsgislib.tools.filetools.untar_file(lcl_cop_file, out_cop_30_dem_ext_path, gen_arch_dir = False, verbose = False)
             except:
+                print(cop_dem_tile)
                 failed_scns.append(cop_dem_tile)
+print(failed_scns)
+rsgislib.tools.utils.write_list_to_file(failed_scns, "fails.txt")
+print("HERE")
 
-rsgislib.tools.utils.write_list_to_file(failed_scns, "cop_30_dem_gmw_tiles_fail_extract.txt")
