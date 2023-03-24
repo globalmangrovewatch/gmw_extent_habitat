@@ -1,0 +1,13 @@
+https://prism-dem-open.copernicus.eu/pd-desk-open-access/prismDownload/COP-DEM_GLO-30-DGED__2021_1/Copernicus_DSM_10_N18_00_E083_00.tar
+https://prism-dem-open.copernicus.eu/pd-desk-open-access/prismDownload/COP-DEM_GLO-30-DGED__2021_1/Copernicus_DSM_10_N00_00_E107_00.tar
+https://prism-dem-open.copernicus.eu/pd-desk-open-access/prismDownload/COP-DEM_GLO-30-DGED__2021_1/Copernicus_DSM_10_S01_00_E121_00.tar
+https://prism-dem-open.copernicus.eu/pd-desk-open-access/prismDownload/COP-DEM_GLO-30-DGED__2021_1/Copernicus_DSM_10_S01_00_E122_00.tar
+https://prism-dem-open.copernicus.eu/pd-desk-open-access/prismDownload/COP-DEM_GLO-30-DGED__2021_1/Copernicus_DSM_10_S07_00_E138_00.tar
+https://prism-dem-open.copernicus.eu/pd-desk-open-access/prismDownload/COP-DEM_GLO-30-DGED__2021_1/Copernicus_DSM_10_S09_00_W159_00.tar
+https://prism-dem-open.copernicus.eu/pd-desk-open-access/prismDownload/COP-DEM_GLO-30-DGED__2021_1/Copernicus_DSM_10_S12_00_E169_00.tar
+https://prism-dem-open.copernicus.eu/pd-desk-open-access/prismDownload/COP-DEM_GLO-30-DGED__2021_1/Copernicus_DSM_10_N00_00_E042_00.tar
+https://prism-dem-open.copernicus.eu/pd-desk-open-access/prismDownload/COP-DEM_GLO-30-DGED__2021_1/Copernicus_DSM_10_N04_00_W078_00.tar
+https://prism-dem-open.copernicus.eu/pd-desk-open-access/prismDownload/COP-DEM_GLO-30-DGED__2021_1/Copernicus_DSM_10_N17_00_E097_00.tar
+https://prism-dem-open.copernicus.eu/pd-desk-open-access/prismDownload/COP-DEM_GLO-30-DGED__2021_1/Copernicus_DSM_10_S08_00_E140_00.tar
+https://prism-dem-open.copernicus.eu/pd-desk-open-access/prismDownload/COP-DEM_GLO-30-DGED__2021_1/Copernicus_DSM_10_N03_00_W160_00.tar
+https://prism-dem-open.copernicus.eu/pd-desk-open-access/prismDownload/COP-DEM_GLO-30-DGED__2021_1/Copernicus_DSM_10_N04_00_E120_00.tar
