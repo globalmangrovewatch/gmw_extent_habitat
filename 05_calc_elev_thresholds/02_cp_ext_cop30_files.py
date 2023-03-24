@@ -31,6 +31,15 @@ for cop_dem_tile in tqdm.tqdm(cop_dem_tiles):
                 print(cop_dem_tile)
                 failed_scns.append(cop_dem_tile)
 print(failed_scns)
-rsgislib.tools.utils.write_list_to_file(failed_scns, "fails.txt")
+#rsgislib.tools.utils.write_list_to_file(failed_scns, "fails.txt")
+try:
+    f = open("cop_30_dem_gmw_tiles_fails.txt", "w")
+    for item in failed_scns:
+        print(item)
+        f.write(str(item) + "\n")
+    f.flush()
+    f.close()
+except Exception as e:
+    raise e
 print("HERE")
 
