@@ -24,7 +24,7 @@ for base_img in base_imgs:
     dem_img = rsgislib.imageutils.imagelut.get_raster_lyr(
         scn_bbox, lut_db_file=lut_vec_file, lyr_name=lut_vec_lyr, tmp_dir=tmp_dir
     )
-    
+
     if dem_img is not None:
         out_dem_img = os.path.join(gmw_dems_dir, f"{gmw_tile_basename}_dem.kea")
         if not os.path.exists(out_dem_img):
@@ -37,4 +37,7 @@ for base_img in base_imgs:
                 datatype=rsgislib.TYPE_32FLOAT,
                 no_data_val=-32767,
                 multicore=False,
+            )
+            rsgislib.imageutils.pop_img_stats(
+                out_dem_img, use_no_data=True, no_data_val=-32767, calc_pyramids=True
             )
