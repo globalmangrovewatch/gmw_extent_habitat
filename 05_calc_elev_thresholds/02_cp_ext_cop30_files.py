@@ -1,5 +1,6 @@
 import os
 import shutil
+import tqdm
 import rsgislib.tools.utils
 import rsgislib.tools.filetools
 
@@ -14,11 +15,11 @@ if not os.path.exists(out_cop_30_dem_ext_path):
 
 cop_dem_tiles = rsgislib.tools.utils.read_text_file_to_list("cop_30_dem_gmw_tiles.txt")
 
-for cop_dem_tile in cop_dem_tiles:
+for cop_dem_tile in tqdm.tqdm(cop_dem_tiles):
     in_cop_file = os.path.join(cop_30_dem_path, cop_dem_tile)
     if os.path.exists(in_cop_file):
         shutil.copy2(in_cop_file, out_cop_30_dem_path)
         lcl_cop_file = os.path.join(out_cop_30_dem_path, cop_dem_tile)
 
         rsgislib.tools.filetools.untar_file(lcl_cop_file, out_cop_30_dem_ext_path, gen_arch_dir = False, verbose = False)
-        break
+
