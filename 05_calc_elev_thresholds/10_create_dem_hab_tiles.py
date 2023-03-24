@@ -24,15 +24,17 @@ for base_img in base_imgs:
     dem_img = rsgislib.imageutils.imagelut.get_raster_lyr(
         scn_bbox, lut_db_file=lut_vec_file, lyr_name=lut_vec_lyr, tmp_dir=tmp_dir
     )
-
-    out_dem_img = os.path.join(gmw_dems_dir, f"{gmw_tile_basename}_dem.kea")
-    rsgislib.imageutils.resample_img_to_match(
-        in_ref_img=base_img,
-        in_process_img=dem_img,
-        output_img=out_dem_img,
-        gdalformat="KEA",
-        interp_method=rsgislib.INTERP_CUBICSPLINE,
-        datatype=rsgislib.TYPE_32FLOAT,
-        no_data_val=-32767,
-        multicore=False,
-    )
+    
+    if dem_img is not None:
+        out_dem_img = os.path.join(gmw_dems_dir, f"{gmw_tile_basename}_dem.kea")
+        if not os.path.exists(out_dem_img):
+            rsgislib.imageutils.resample_img_to_match(
+                in_ref_img=base_img,
+                in_process_img=dem_img,
+                output_img=out_dem_img,
+                gdalformat="KEA",
+                interp_method=rsgislib.INTERP_CUBICSPLINE,
+                datatype=rsgislib.TYPE_32FLOAT,
+                no_data_val=-32767,
+                multicore=False,
+            )
