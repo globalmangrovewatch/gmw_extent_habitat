@@ -35,7 +35,7 @@ for cop_dem_tile in tqdm.tqdm(cop_dem_tiles):
         no_scn.append(cop_dem_tile)
 print(failed_scns)
 print(no_scn)
-rsgislib.tools.utils.write_list_to_file(failed_scns, "cop_30_dem_gmw_tiles_fails.txt")
-rsgislib.tools.utils.write_list_to_file(no_scn, "cop_30_dem_gmw_tiles_not_avail.txt")
+rsgislib.tools.utils.write_list_to_file(failed_scns, "/home/pete/cop_30_dem_gmw_tiles_fails.txt")
+rsgislib.tools.utils.write_list_to_file(no_scn, "/home/pete/cop_30_dem_gmw_tiles_not_avail.txt")
 
 
