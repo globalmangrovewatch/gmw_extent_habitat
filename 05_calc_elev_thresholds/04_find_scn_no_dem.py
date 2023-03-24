@@ -13,7 +13,7 @@ for scn_path in scns_lst:
     if scn_dem is None:
         print(scn_path)
         rmd_scns.append(scn_dir)
-        #shutil.rmtree(scn_path)
+        shutil.rmtree(scn_path)
 
 rsgislib.tools.utils.write_list_to_file(rmd_scns, "cop_30_dem_gmw_tiles_rmd.txt")
 
