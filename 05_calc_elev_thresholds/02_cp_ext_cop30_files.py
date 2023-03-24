@@ -15,6 +15,7 @@ if not os.path.exists(out_cop_30_dem_ext_path):
 
 cop_dem_tiles = rsgislib.tools.utils.read_text_file_to_list("cop_30_dem_gmw_tiles.txt")
 failed_scns = list()
+no_scn = list()
 for cop_dem_tile in tqdm.tqdm(cop_dem_tiles):
     in_cop_file = os.path.join(cop_30_dem_path, cop_dem_tile)
     if os.path.exists(in_cop_file):
@@ -30,16 +31,11 @@ for cop_dem_tile in tqdm.tqdm(cop_dem_tiles):
             except:
                 print(cop_dem_tile)
                 failed_scns.append(cop_dem_tile)
+    else:
+        no_scn.append(cop_dem_tile)
 print(failed_scns)
-#rsgislib.tools.utils.write_list_to_file(failed_scns, "fails.txt")
-try:
-    f = open("cop_30_dem_gmw_tiles_fails.txt", "w")
-    for item in failed_scns:
-        print(item)
-        f.write(str(item) + "\n")
-    f.flush()
-    f.close()
-except Exception as e:
-    raise e
-print("HERE")
+print(no_scn)
+rsgislib.tools.utils.write_list_to_file(failed_scns, "cop_30_dem_gmw_tiles_fails.txt")
+rsgislib.tools.utils.write_list_to_file(no_scn, "cop_30_dem_gmw_tiles_not_avail.txt")
+
 
