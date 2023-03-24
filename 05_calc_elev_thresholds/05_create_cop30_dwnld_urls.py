@@ -13,9 +13,15 @@ for cop30_scn in cop30_scn_urls:
 
 scn_dnwld = list()
 
-fail1_tiles = rsgislib.tools.utils.read_text_file_to_list("cop_30_dem_gmw_tiles_fails.txt")
-fail2_tiles = rsgislib.tools.utils.read_text_file_to_list("cop_30_dem_gmw_tiles_not_avail.txt")
-fail3_tiles = rsgislib.tools.utils.read_text_file_to_list("cop_30_dem_gmw_tiles_rmd.txt")
+fail1_tiles = rsgislib.tools.utils.read_text_file_to_list(
+    "cop_30_dem_gmw_tiles_fails.txt"
+)
+fail2_tiles = rsgislib.tools.utils.read_text_file_to_list(
+    "cop_30_dem_gmw_tiles_not_avail.txt"
+)
+fail3_tiles = rsgislib.tools.utils.read_text_file_to_list(
+    "cop_30_dem_gmw_tiles_rmd.txt"
+)
 fail_tiles = fail1_tiles + fail2_tiles + fail3_tiles
 for tile in fail_tiles:
     if "." in tile:
@@ -25,6 +31,6 @@ for tile in fail_tiles:
     if tile in scn_lut:
         scn_dnwld.append(scn_lut[tile])
 
-rsgislib.tools.utils.write_list_to_file(scn_dnwld, "cop_30_dem_gmw_tiles_urls_dwnld.txt")
-
-
+rsgislib.tools.utils.write_list_to_file(
+    scn_dnwld, "cop_30_dem_gmw_tiles_urls_dwnld.txt"
+)

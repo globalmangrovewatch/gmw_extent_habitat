@@ -5,11 +5,15 @@ import rsgislib.tools.utils
 import rsgislib.tools.filetools
 
 cop_30_dem_path = "/bigdata/petebunting/copernicus-dem-30m/copernicus-dem-30m"
-out_cop_30_dem_path = "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/cop30_dwnld_tiles"
+out_cop_30_dem_path = (
+    "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/cop30_dwnld_tiles"
+)
 if not os.path.exists(out_cop_30_dem_path):
     os.mkdir(out_cop_30_dem_path)
 
-out_cop_30_dem_ext_path = "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/cop30_extract_tiles"
+out_cop_30_dem_ext_path = (
+    "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/cop30_extract_tiles"
+)
 if not os.path.exists(out_cop_30_dem_ext_path):
     os.mkdir(out_cop_30_dem_ext_path)
 
@@ -28,7 +32,12 @@ for cop_dem_tile in tqdm.tqdm(cop_dem_tiles):
         cop_scn_dir = os.path.join(out_cop_30_dem_ext_path, scn_basename)
         if not os.path.exists(cop_scn_dir):
             try:
-                rsgislib.tools.filetools.untar_file(lcl_cop_file, out_cop_30_dem_ext_path, gen_arch_dir = False, verbose = False)
+                rsgislib.tools.filetools.untar_file(
+                    lcl_cop_file,
+                    out_cop_30_dem_ext_path,
+                    gen_arch_dir=False,
+                    verbose=False,
+                )
             except:
                 print(cop_dem_tile)
                 failed_scns.append(cop_dem_tile)
@@ -39,5 +48,3 @@ print(failed_scns)
 print(no_scn)
 rsgislib.tools.utils.write_list_to_file(failed_scns, "cop_30_dem_gmw_tiles_fails.txt")
 rsgislib.tools.utils.write_list_to_file(no_scn, "cop_30_dem_gmw_tiles_not_avail.txt")
-
-
