@@ -67,7 +67,7 @@ def calc_sum_stats_msk_vals(
         stats_dict["max"] = pxls_vals.max()
         stats_dict["mean"] = pxls_vals.mean()
         stats_dict["stddev"] = pxls_vals.std()
-        stats_dict["median"] = pxls_vals.median()
+        stats_dict["median"] = numpy.median(pxls_vals)
 
 
     vals_arr = None
