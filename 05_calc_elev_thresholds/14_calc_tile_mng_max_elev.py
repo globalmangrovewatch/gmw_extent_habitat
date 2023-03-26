@@ -1,3 +1,4 @@
+from typing import List, Dict
 import glob
 import os
 import numpy
@@ -9,7 +10,7 @@ import rsgislib.tools.utils
 from osgeo import gdal
 
 def calc_sum_stats_msk_vals(
-    input_img, img_band, img_msk, msk_band, msk_vals=None, use_no_data=True, no_data_val=None, out_no_data_val=-9999,
+    input_img:str, img_band:int, img_msk:str, msk_band:int, msk_vals:List[int]=None, use_no_data:bool=True, no_data_val:float=None, out_no_data_val:float=-9999,
 ):
     """
     A function which reads the image bands (values and mask) into memory
@@ -22,10 +23,10 @@ def calc_sum_stats_msk_vals(
     :param msk_vals: a list of values within the mask can be provided to just consider
                     a limited number of mask values when calculating the histograms.
                     If None (default) then calculated for all mask values.
-    :param use_no_data:
-    :param no_data_val:
-
-    :return: returns a dict of mask values with an array for the histogram.
+    :param use_no_data: Use no data value for the input image.
+    :param no_data_val: no data value for the input image (if None then read from input image header)
+    :param out_no_data_val: output no data value written to output dict if there are no valid pixel values.
+    :return: returns a dict summary statistics (Min, Max, Mean, Std Dev, Median)
 
     """
     if use_no_data and (no_data_val is None):
@@ -68,7 +69,6 @@ def calc_sum_stats_msk_vals(
         stats_dict["mean"] = pxls_vals.mean()
         stats_dict["stddev"] = pxls_vals.std()
         stats_dict["median"] = numpy.median(pxls_vals)
-
 
     vals_arr = None
     msk_arr = None
