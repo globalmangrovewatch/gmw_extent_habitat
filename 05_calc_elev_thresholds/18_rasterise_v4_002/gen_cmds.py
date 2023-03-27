@@ -29,7 +29,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
     def run_gen_commands(self):
         # Could Pass info to gen_command_info function
         # (e.g., input / output directories)
-        self.gen_command_info(base_img_tiles="../01_gmw_tiles/base_tiles/*.tif",
+        self.gen_command_info(base_img_tiles="../../01_gmw_tiles/base_tiles/*.tif",
                               vec_file="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_v4_sen2_sgl_cls_v002.gpkg",
                               vec_lyr="gmw_v4_sen2_sgl_cls_v002",
             out_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_tile_v4_002_ext")
