@@ -25,22 +25,23 @@ tiles = rsgislib.vectorattrs.read_vec_column(
 tile_params = list()
 for tile in tiles:
     hab_img = os.path.join(hab_dir, f"gmw_{tile}_hab_{gmw_hab_version}.kea")
-    n_pxl_counts = rsgislib.imagecalc.count_pxls_of_val(hab_img, vals=[1], img_band=1)
+    if os.path.exists(hab_img):
+        n_pxl_counts = rsgislib.imagecalc.count_pxls_of_val(hab_img, vals=[1], img_band=1)
 
-    if n_pxl_counts[0] > 0:
-        out_vec_lyr = f"gmw_{tile}_hab_{gmw_hab_version}"
-        out_vec_file = os.path.join(out_dir, f"{out_vec_lyr}.gpkg")
-        if not os.path.exists(out_vec_file):
-            rsgislib.vectorutils.createvectors.polygonise_raster_to_vec_lyr(
-                out_vec_file,
-                out_vec_lyr,
-                out_format="GPKG",
-                input_img=hab_img,
-                img_band=1,
-                mask_img=hab_img,
-                mask_band=1,
-                replace_file=True,
-                replace_lyr=True,
-                pxl_val_fieldname="PXLVAL",
-                use_8_conn=False,
-            )
+        if n_pxl_counts[0] > 0:
+            out_vec_lyr = f"gmw_{tile}_hab_{gmw_hab_version}"
+            out_vec_file = os.path.join(out_dir, f"{out_vec_lyr}.gpkg")
+            if not os.path.exists(out_vec_file):
+                rsgislib.vectorutils.createvectors.polygonise_raster_to_vec_lyr(
+                    out_vec_file,
+                    out_vec_lyr,
+                    out_format="GPKG",
+                    input_img=hab_img,
+                    img_band=1,
+                    mask_img=hab_img,
+                    mask_band=1,
+                    replace_file=True,
+                    replace_lyr=True,
+                    pxl_val_fieldname="PXLVAL",
+                    use_8_conn=False,
+                )
