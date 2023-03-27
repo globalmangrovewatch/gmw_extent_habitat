@@ -26,17 +26,17 @@ class GenCmds(PBPTGenQProcessToolCmds):
                 kwargs["gmw_v10_hab_dir"], f"gmw_{gmw_tile_basename}_hab_v10.tif"
             )
             dem_img = os.path.join(kwargs["dem_dir"], f"{gmw_tile_basename}_dem.kea")
-
-            new_hab_img = os.path.join(
-                kwargs["out_dir"], f"gmw_{gmw_tile_basename}_hab_v11.kea"
-            )
-            if not os.path.exists(new_hab_img):
-                c_dict = dict()
-                c_dict["hab_img"] = hab_img
-                c_dict["dem_img"] = dem_img
-                c_dict["elev_thres"] = elev_thres_lut[gmw_tile_basename]
-                c_dict["new_hab_img"] = new_hab_img
-                self.params.append(c_dict)
+            if os.path.exists(hab_img) and os.path.exists(dem_img):
+                new_hab_img = os.path.join(
+                    kwargs["out_dir"], f"gmw_{gmw_tile_basename}_hab_v11.kea"
+                )
+                if not os.path.exists(new_hab_img):
+                    c_dict = dict()
+                    c_dict["hab_img"] = hab_img
+                    c_dict["dem_img"] = dem_img
+                    c_dict["elev_thres"] = elev_thres_lut[gmw_tile_basename]
+                    c_dict["new_hab_img"] = new_hab_img
+                    self.params.append(c_dict)
 
     def run_gen_commands(self):
         # Could Pass info to gen_command_info function
