@@ -15,20 +15,20 @@ gmw_dems_dir = (
     "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_tile_cop30_dem"
 )
 gmw_v3_ext_dir = (
-    "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_tile_v3_ext"
+    "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/mng_ext_gmw_v3_v4_002_inter"
 )
 
-out_dir = "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_tile_v3_ext_high_elev"
+out_dir = "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_tile_v3_v4_002_inter_ext_high_elev"
 if not os.path.exists(out_dir):
     os.mkdir(out_dir)
 
 gmw_tile_elev_stats = dict()
 for gmw_tile in tqdm.tqdm(tile_max_elev_lut):
     if tile_max_elev_lut[gmw_tile] > 50:
-        gmw_ext_img = os.path.join(gmw_v3_ext_dir, f"{gmw_tile}_v3_2015_ext.kea")
+        gmw_ext_img = os.path.join(gmw_v3_ext_dir, f"{gmw_tile}_v3_v4_inter_ext.kea")
         dem_img = os.path.join(gmw_dems_dir, f"{gmw_tile}_dem.kea")
 
-        out_img = os.path.join(out_dir, f"{gmw_tile}_v3_2015_ext_elev_gt50.kea")
+        out_img = os.path.join(out_dir, f"{gmw_tile}_v3_v4_inter_ext_elev_gt50.kea")
         if (
             os.path.exists(gmw_ext_img)
             and os.path.exists(dem_img)
@@ -51,7 +51,7 @@ for gmw_tile in tqdm.tqdm(tile_max_elev_lut):
                 ignore_zero=True,
             )
 
-        out_vec_lyr = f"{gmw_tile}_v3_2015_ext_elev_gt50"
+        out_vec_lyr = f"{gmw_tile}_v3_v4_inter_ext_elev_gt50"
         out_vec_file = os.path.join(out_dir, f"{out_vec_lyr}.gpkg")
         if os.path.exists(out_img) and (not os.path.exists(out_vec_file)):
             rsgislib.vectorutils.createvectors.polygonise_raster_to_vec_lyr(
