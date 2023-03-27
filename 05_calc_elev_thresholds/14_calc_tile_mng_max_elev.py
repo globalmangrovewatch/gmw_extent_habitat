@@ -82,13 +82,13 @@ gmw_dems_dir = (
     "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_tile_cop30_dem"
 )
 gmw_v3_ext_dir = (
-    "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_tile_v3_ext"
+    "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/mng_ext_gmw_v3_v4_002_inter"
 )
 
 gmw_tile_elev_stats = dict()
 for base_img in tqdm.tqdm(base_imgs):
     gmw_tile_basename = rsgislib.tools.filetools.get_file_basename(base_img)
-    gmw_ext_img = os.path.join(gmw_v3_ext_dir, f"{gmw_tile_basename}_v3_2015_ext.kea")
+    gmw_ext_img = os.path.join(gmw_v3_ext_dir, f"{gmw_tile_basename}_v3_v4_inter_ext.kea")
     dem_img = os.path.join(gmw_dems_dir, f"{gmw_tile_basename}_dem.kea")
 
     if os.path.exists(gmw_ext_img) and os.path.exists(dem_img):
@@ -102,4 +102,4 @@ for base_img in tqdm.tqdm(base_imgs):
         gmw_tile_elev_stats[gmw_tile_basename] = -9999
 
 
-rsgislib.tools.utils.write_dict_to_json(gmw_tile_elev_stats, "gmw_elev_tile_stats.json")
+rsgislib.tools.utils.write_dict_to_json(gmw_tile_elev_stats, "gmw_v3_v4_inter_elev_tile_stats.json")

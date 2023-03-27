@@ -4,8 +4,8 @@ os.environ['USE_PYGEOS'] = '0'
 import rsgislib.tools.utils
 import geopandas
 
-tile_max_elev_lut = rsgislib.tools.utils.read_json_to_dict("gmw_elev_tile_stats.json")
-gmw_prjs_lut = rsgislib.tools.utils.read_json_to_dict("../gmw_projects_luts.json")
+tile_max_elev_lut = rsgislib.tools.utils.read_json_to_dict("gmw_v3_v4_inter_elev_tile_stats.json")
+gmw_prjs_lut = rsgislib.tools.utils.read_json_to_dict("../99_gmw_prj_definition/gmw_tile_prj_lut.json")
 gmw_tiles_prj_lut = dict()
 for gmw_prj in gmw_prjs_lut:
     for gmw_tile in gmw_prjs_lut[gmw_prj]:
@@ -42,5 +42,5 @@ gmw_tiles_gdf["gmw_prj"] = gmw_prj_lst
 gmw_tiles_gdf["gmw_prj_lvl1"] = gmw_lvl1_prj_lst
 gmw_tiles_gdf["gmw_prj_lvl2"] = gmw_lvl2_prj_lst
 
-gmw_tiles_gdf.to_file("gmw_tiles_elev_prjs.geojson", driver="GeoJSON")
+gmw_tiles_gdf.to_file("gmw_v3_v4_inter_tiles_elev_prjs.geojson", driver="GeoJSON")
 
