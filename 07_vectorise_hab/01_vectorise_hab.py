@@ -12,9 +12,9 @@ out_dir = "gmw_hab_vec_tiles"
 if not os.path.exists(out_dir):
     os.mkdir(out_dir)
 
-hab_dir = "../04_apply_edits/gmw_hab_tiles"
+hab_dir = "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v11_tiles"
 
-gmw_hab_version = "v10"
+gmw_hab_version = "v11"
 
 gmw_tiles_vec_file = "../01_gmw_tiles/gmw_degree_tiles.geojson"
 gmw_tile_vec_lyr = "gmw_degree_tiles"
@@ -24,7 +24,7 @@ tiles = rsgislib.vectorattrs.read_vec_column(
 )
 tile_params = list()
 for tile in tiles:
-    hab_img = os.path.join(hab_dir, f"gmw_{tile}_hab_{gmw_hab_version}.tif")
+    hab_img = os.path.join(hab_dir, f"gmw_{tile}_hab_{gmw_hab_version}.kea")
     n_pxl_counts = rsgislib.imagecalc.count_pxls_of_val(hab_img, vals=[1], img_band=1)
 
     if n_pxl_counts[0] > 0:
