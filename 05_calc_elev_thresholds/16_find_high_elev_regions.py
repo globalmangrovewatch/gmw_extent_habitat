@@ -9,7 +9,7 @@ import rsgislib.rastergis
 import rsgislib.tools.utils
 import rsgislib.vectorutils.createvectors
 
-tile_max_elev_lut = rsgislib.tools.utils.read_json_to_dict("gmw_elev_tile_stats.json")
+tile_max_elev_lut = rsgislib.tools.utils.read_json_to_dict("gmw_v3_v4_inter_elev_tile_stats.json")
 
 gmw_dems_dir = (
     "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_tile_cop30_dem"
