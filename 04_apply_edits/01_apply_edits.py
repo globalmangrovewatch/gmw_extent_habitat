@@ -41,4 +41,6 @@ for tile in tiles:
         rsgislib.imagecalc.band_math(
             out_img, "add==1?1:rm==1?0:hab", "KEA", rsgislib.TYPE_8UINT, band_defns
         )
-        rsgislib.rastergis.pop_rat_img_stats(clumps_img=out_img, add_clr_tab=True, calc_pyramids=True, ignore_zero=True)
+        rsgislib.rastergis.pop_rat_img_stats(
+            clumps_img=out_img, add_clr_tab=True, calc_pyramids=True, ignore_zero=True
+        )
