@@ -23,12 +23,12 @@ class GenCmds(PBPTGenQProcessToolCmds):
             gmw_tile_basename = rsgislib.tools.filetools.get_file_basename(base_img)
 
             hab_img = os.path.join(
-                kwargs["gmw_v10_hab_dir"], f"gmw_{gmw_tile_basename}_hab_v10.tif"
+                kwargs["gmw_hab_dir"], f"gmw_{gmw_tile_basename}_hab_v12_tmp.kea"
             )
             dem_img = os.path.join(kwargs["dem_dir"], f"{gmw_tile_basename}_dem.kea")
             if os.path.exists(hab_img) and os.path.exists(dem_img):
                 new_hab_img = os.path.join(
-                    kwargs["out_dir"], f"gmw_{gmw_tile_basename}_hab_v11.kea"
+                    kwargs["out_dir"], f"gmw_{gmw_tile_basename}_hab_v12.kea"
                 )
                 if not os.path.exists(new_hab_img):
                     c_dict = dict()
@@ -37,16 +37,18 @@ class GenCmds(PBPTGenQProcessToolCmds):
                     c_dict["elev_thres"] = elev_thres_lut[gmw_tile_basename]
                     c_dict["new_hab_img"] = new_hab_img
                     self.params.append(c_dict)
+            else:
+                print(f"Could not create job for: {gmw_tile_basename}")
 
     def run_gen_commands(self):
         # Could Pass info to gen_command_info function
         # (e.g., input / output directories)
         self.gen_command_info(
             base_img_tiles="../01_gmw_tiles/base_tiles/*.tif",
-            gmw_v10_hab_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/scripts/04_apply_edits/gmw_hab_tiles",
+            gmw_hab_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/scripts/04_apply_edits/gmw_hab_tiles",
             dem_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_tile_cop30_dem",
             dem_thres_lut="../05_calc_elev_thresholds/gmw_v3_v4_inter_elev_tile_fnl_thresholds.json",
-            out_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v11_tiles",
+            out_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v12_tiles",
         )
 
         self.pop_params_db()

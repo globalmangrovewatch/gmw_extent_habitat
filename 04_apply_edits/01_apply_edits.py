@@ -32,7 +32,7 @@ for tile in tiles:
     add_img = os.path.join(add_dir, f"gmw_{tile}_add_hab_{gmw_hab_edit_version}.tif")
     rm_img = os.path.join(rm_dir, f"gmw_{tile}_rm_hab_{gmw_hab_edit_version}.tif")
 
-    out_img = os.path.join(out_dir, f"gmw_{tile}_hab_{gmw_hab_new_version}.kea")
+    out_img = os.path.join(out_dir, f"gmw_{tile}_hab_{gmw_hab_new_version}_tmp.kea")
     if not os.path.exists(out_img):
         band_defns = list()
         band_defns.append(rsgislib.imagecalc.BandDefn("hab", hab_img, 1))
