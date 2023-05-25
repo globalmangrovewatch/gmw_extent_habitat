@@ -23,12 +23,12 @@ class GenCmds(PBPTGenQProcessToolCmds):
             gmw_tile_basename = rsgislib.tools.filetools.get_file_basename(base_img)
 
             hab_img = os.path.join(
-                kwargs["gmw_hab_dir"], f"gmw_{gmw_tile_basename}_hab_v12_tmp.kea"
+                kwargs["gmw_hab_dir"], f"gmw_{gmw_tile_basename}_hab_v13_tmp.kea"
             )
             dem_img = os.path.join(kwargs["dem_dir"], f"{gmw_tile_basename}_dem.kea")
             if os.path.exists(hab_img) and os.path.exists(dem_img):
                 new_hab_img = os.path.join(
-                    kwargs["out_dir"], f"gmw_{gmw_tile_basename}_hab_v12.kea"
+                    kwargs["out_dir"], f"gmw_{gmw_tile_basename}_hab_v13.kea"
                 )
                 if not os.path.exists(new_hab_img):
                     c_dict = dict()
