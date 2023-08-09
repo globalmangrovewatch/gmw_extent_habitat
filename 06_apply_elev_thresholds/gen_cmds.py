@@ -26,25 +26,19 @@ class GenCmds(PBPTGenQProcessToolCmds):
                 kwargs["gmw_hab_dir"], f"gmw_{gmw_tile_basename}_hab_v14_tmp.kea"
             )
             dem_img = os.path.join(kwargs["dem_dir"], f"{gmw_tile_basename}_dem.kea")
-            if os.path.exists(dem_img):
-                if os.path.exists(hab_img):
-                    new_hab_img = os.path.join(
-                        kwargs["out_dir"], f"gmw_{gmw_tile_basename}_hab_v13.kea"
-                    )
-                    if not os.path.exists(new_hab_img):
+            new_hab_img = os.path.join(kwargs["out_dir"], f"gmw_{gmw_tile_basename}_hab_v14.kea")
+            if not os.path.exists(new_hab_img):
+                if os.path.exists(dem_img):
+                    if os.path.exists(hab_img):
                         c_dict = dict()
                         c_dict["hab_img"] = hab_img
                         c_dict["dem_img"] = dem_img
                         c_dict["elev_thres"] = elev_thres_lut[gmw_tile_basename]
                         c_dict["new_hab_img"] = new_hab_img
                         self.params.append(c_dict)
-            else:
-                print(f"Creating a job without a DEM: {gmw_tile_basename}")
-                if os.path.exists(hab_img):
-                    new_hab_img = os.path.join(
-                        kwargs["out_dir"], f"gmw_{gmw_tile_basename}_hab_v13.kea"
-                        )
-                    if not os.path.exists(new_hab_img):
+                else:
+                    print(f"Creating a job without a DEM: {gmw_tile_basename}")
+                    if os.path.exists(hab_img):
                         c_dict = dict()
                         c_dict["hab_img"] = hab_img
                         c_dict["dem_img"] = ""

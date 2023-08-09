@@ -23,8 +23,7 @@ class ProcessCmd(PBPTQProcessTool):
             )
         else:
             band_defns = list()
-            band_defns.append(rsgislib.imagecalc.BandDefn("hab",
-                                                          self.params["hab_img"], 1))
+            band_defns.append(rsgislib.imagecalc.BandDefn("hab", self.params["hab_img"], 1))
             rsgislib.imagecalc.band_math(
                 self.params["new_hab_img"], "hab", "KEA", rsgislib.TYPE_8UINT, band_defns
                 )
