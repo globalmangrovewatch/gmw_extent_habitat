@@ -1,6 +1,0 @@
-Copernicus_DSM_10_N18_00_E083_00.tar
-Copernicus_DSM_10_N00_00_E107_00.tar
-Copernicus_DSM_10_S01_00_E121_00.tar
-Copernicus_DSM_10_S01_00_E122_00.tar
-Copernicus_DSM_10_S07_00_E138_00.tar
-Copernicus_DSM_10_S09_00_W159_00.tar

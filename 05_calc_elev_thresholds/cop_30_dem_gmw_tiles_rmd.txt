@@ -1,7 +1,0 @@
-Copernicus_DSM_10_S12_00_E169_00
-Copernicus_DSM_10_N00_00_E042_00
-Copernicus_DSM_10_N04_00_W078_00
-Copernicus_DSM_10_N17_00_E097_00
-Copernicus_DSM_10_S08_00_E140_00
-Copernicus_DSM_10_N03_00_W160_00
-Copernicus_DSM_10_N04_00_E120_00
