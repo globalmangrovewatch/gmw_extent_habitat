@@ -13,8 +13,12 @@ class ProcessCmd(PBPTQProcessTool):
         super().__init__(cmd_name="perform_analysis.py", descript=None)
 
     def do_processing(self, **kwargs):
+        base_hab_img = self.params["hab_img"]
+        if not os.path.exists(base_hab_img):
+            base_hab_img = self.params["base_img"]
+
         band_defns = list()
-        band_defns.append(rsgislib.imagecalc.BandDefn("hab", self.params["hab_img"], 1))
+        band_defns.append(rsgislib.imagecalc.BandDefn("hab", base_hab_img, 1))
         band_defns.append(rsgislib.imagecalc.BandDefn("add", self.params["add_img"], 1))
         band_defns.append(rsgislib.imagecalc.BandDefn("rm", self.params["rm_img"], 1))
         rsgislib.imagecalc.band_math(
@@ -34,6 +38,7 @@ class ProcessCmd(PBPTQProcessTool):
     def required_fields(self, **kwargs):
         # Return a list of the required fields which will be checked
         return [
+            "base_img",
             "hab_img",
             "add_img",
             "rm_img",

@@ -20,6 +20,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
         )
 
         for tile in tiles:
+            base_img = os.path.join(kwargs["gmw_base_tiles_dir"], f"{tile}.tif")
             hab_img = os.path.join(
                 kwargs["old_hab_dir"],
                 f"gmw_{tile}_hab_{kwargs['gmw_hab_prev_version']}.kea",
@@ -39,6 +40,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
             )
             if not os.path.exists(out_img):
                 c_dict = dict()
+                c_dict["base_img"] = base_img
                 c_dict["hab_img"] = hab_img
                 c_dict["add_img"] = add_img
                 c_dict["rm_img"] = rm_img
@@ -49,6 +51,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
         # Could Pass info to gen_command_info function
         # (e.g., input / output directories)
         self.gen_command_info(
+            gmw_base_tiles_dir="../01_gmw_tiles/base_tiles",
             add_dir="../03_rasterise_hab_edits/gmw_hab_adds",
             rm_dir="../03_rasterise_hab_edits/gmw_hab_rms",
             old_hab_dir="../../data/gmw_hab_v13_tiles",
