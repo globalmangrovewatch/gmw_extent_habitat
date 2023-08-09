@@ -13,13 +13,21 @@ class ProcessCmd(PBPTQProcessTool):
         super().__init__(cmd_name="perform_analysis.py", descript=None)
 
     def do_processing(self, **kwargs):
-        band_defns = list()
-        band_defns.append(rsgislib.imagecalc.BandDefn("hab", self.params["hab_img"], 1))
-        band_defns.append(rsgislib.imagecalc.BandDefn("dem", self.params["dem_img"], 1))
-        exp = f"(hab==1)&&(dem<{self.params['elev_thres']})?1:0"
-        rsgislib.imagecalc.band_math(
-            self.params["new_hab_img"], exp, "KEA", rsgislib.TYPE_8UINT, band_defns
-        )
+        if self.params["dem_img"] != "":
+            band_defns = list()
+            band_defns.append(rsgislib.imagecalc.BandDefn("hab", self.params["hab_img"], 1))
+            band_defns.append(rsgislib.imagecalc.BandDefn("dem", self.params["dem_img"], 1))
+            exp = f"(hab==1)&&(dem<{self.params['elev_thres']})?1:0"
+            rsgislib.imagecalc.band_math(
+                self.params["new_hab_img"], exp, "KEA", rsgislib.TYPE_8UINT, band_defns
+            )
+        else:
+            band_defns = list()
+            band_defns.append(rsgislib.imagecalc.BandDefn("hab",
+                                                          self.params["hab_img"], 1))
+            rsgislib.imagecalc.band_math(
+                self.params["new_hab_img"], "hab", "KEA", rsgislib.TYPE_8UINT, band_defns
+                )
         rsgislib.rastergis.pop_rat_img_stats(
             clumps_img=self.params["new_hab_img"],
             add_clr_tab=True,
