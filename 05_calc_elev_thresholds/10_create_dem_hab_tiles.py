@@ -20,14 +20,13 @@ tmp_dir = "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/tmp"
 
 for base_img in base_imgs:
     gmw_tile_basename = rsgislib.tools.filetools.get_file_basename(base_img)
-    scn_bbox = rsgislib.imageutils.get_img_bbox(base_img)
-    dem_img = rsgislib.imageutils.imagelut.get_raster_lyr(
-        scn_bbox, lut_db_file=lut_vec_file, lyr_name=lut_vec_lyr, tmp_dir=tmp_dir
-    )
-
-    if dem_img is not None:
-        out_dem_img = os.path.join(gmw_dems_dir, f"{gmw_tile_basename}_dem.kea")
-        if not os.path.exists(out_dem_img):
+    out_dem_img = os.path.join(gmw_dems_dir, f"{gmw_tile_basename}_dem.kea")
+    if not os.path.exists(out_dem_img):
+        scn_bbox = rsgislib.imageutils.get_img_bbox(base_img)
+        dem_img = rsgislib.imageutils.imagelut.get_raster_lyr(
+            scn_bbox, lut_db_file=lut_vec_file, lyr_name=lut_vec_lyr, tmp_dir=tmp_dir
+        )
+        if dem_img is not None:
             rsgislib.imageutils.resample_img_to_match(
                 in_ref_img=base_img,
                 in_process_img=dem_img,
