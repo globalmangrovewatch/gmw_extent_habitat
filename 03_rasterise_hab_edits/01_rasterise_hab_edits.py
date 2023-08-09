@@ -38,11 +38,11 @@ out_rm_dir = "gmw_hab_rms"
 if not os.path.exists(out_rm_dir):
     os.mkdir(out_rm_dir)
 
-gmw_hab_add_vec_file = "../00_edits/edits_v13_v14/GMW_Hab_v13_add.geojson"
-gmw_hab_add_vec_lyr = "GMW_Hab_v13_add"
+gmw_hab_add_vec_file = "../00_edits/edits_v13_v14/gmw_v13_hab_add.geojson"
+gmw_hab_add_vec_lyr = "gmw_v13_hab_add"
 
-gmw_hab_rm_vec_file = "../00_edits/edits_v13_v14/GMW_Hab_v13_rm.geojson"
-gmw_hab_rm_vec_lyr = "GMW_Hab_v13_rm"
+gmw_hab_rm_vec_file = "../00_edits/edits_v13_v14/gmw_v13_hab_rm.geojson"
+gmw_hab_rm_vec_lyr = "gmw_v13_hab_rm"
 
 gmw_hab_version = "v13_to_v14"
 
