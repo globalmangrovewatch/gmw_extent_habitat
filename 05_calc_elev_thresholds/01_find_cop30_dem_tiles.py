@@ -11,7 +11,7 @@ gmw_tiles_gdf = geopandas.read_file("../01_gmw_tiles/gmw_degree_tiles.geojson")
 
 cop_dem_tiles = list()
 for index, tile in gmw_tiles_gdf.iterrows():
-    if tile["tile_name"] in ["N32E130", "N35E138"]:
+    if tile["tile_name"] in ["N30E140", "N00W097", "N00W096", "N17E114", "S01W096"]:
         if tile["MinY"] < 0:
             abs_lat_int = rsgislib.tools.utils.zero_pad_num_str(
                 math.fabs(tile["MinY"]), str_len=2, integerise=True
