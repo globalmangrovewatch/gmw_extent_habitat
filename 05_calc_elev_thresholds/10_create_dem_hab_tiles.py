@@ -4,7 +4,15 @@ import rsgislib.imageutils
 import rsgislib.imageutils.imagelut
 import rsgislib.tools.filetools
 
-base_imgs = glob.glob("../01_gmw_tiles/base_tiles/*.tif")
+#base_imgs = glob.glob("../01_gmw_tiles/base_tiles/*.tif")
+
+base_imgs = ["../01_gmw_tiles/base_tiles/N30E140.tif",
+             "../01_gmw_tiles/base_tiles/N00W097.tif",
+             "../01_gmw_tiles/base_tiles/N00W096.tif",
+             "../01_gmw_tiles/base_tiles/N17E114.tif",
+             "../01_gmw_tiles/base_tiles/S01W096.tif"]
+
+
 gmw_dems_dir = (
     "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_tile_cop30_dem"
 )
@@ -40,3 +48,5 @@ for base_img in base_imgs:
             rsgislib.imageutils.pop_img_stats(
                 out_dem_img, use_no_data=True, no_data_val=-32767, calc_pyramids=True
             )
+
+
