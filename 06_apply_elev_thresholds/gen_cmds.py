@@ -54,7 +54,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
             gmw_hab_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/scripts/04_apply_edits/gmw_hab_tiles",
             dem_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_tile_cop30_dem",
             dem_thres_lut="../05_calc_elev_thresholds/gmw_v3_v4_inter_elev_tile_fnl_thresholds.json",
-            out_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v14_tiles",
+            out_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v15_tiles",
         )
 
         self.pop_params_db()
