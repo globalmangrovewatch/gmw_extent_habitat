@@ -38,13 +38,13 @@ out_rm_dir = "gmw_hab_rms"
 if not os.path.exists(out_rm_dir):
     os.mkdir(out_rm_dir)
 
-gmw_hab_add_vec_file = "../00_edits/edits_v13_v14/gmw_v13_hab_add.geojson"
+gmw_hab_add_vec_file = "../00_edits/edits_v14_v15_v14/gmw_v15_hab_add.geojson"
 gmw_hab_add_vec_lyr = "gmw_v13_hab_add"
 
-gmw_hab_rm_vec_file = "../00_edits/edits_v13_v14/gmw_v13_hab_rm.geojson"
+gmw_hab_rm_vec_file = "../00_edits/edits_v14_v15_v14/gmw_v15_hab_rm.geojson"
 gmw_hab_rm_vec_lyr = "gmw_v13_hab_rm"
 
-gmw_hab_version = "v13_to_v14"
+gmw_hab_version = "v14_to_v15"
 
 add_vec_ds_obj, add_vec_lyr_obj = rsgislib.vectorutils.read_vec_lyr_to_mem(
     vec_file=gmw_hab_add_vec_file, vec_lyr=gmw_hab_add_vec_lyr
