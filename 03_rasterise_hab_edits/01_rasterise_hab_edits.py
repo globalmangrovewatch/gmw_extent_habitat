@@ -38,21 +38,21 @@ out_rm_dir = "gmw_hab_rms"
 if not os.path.exists(out_rm_dir):
     os.mkdir(out_rm_dir)
 
-gmw_hab_add_vec_file = "../00_edits/edits_v14_v15/gmw_v15_hab_add.geojson"
-gmw_hab_add_vec_lyr = "gmw_v15_hab_add"
+gmw_hab_add_vec_file = "../00_edits/edits_v16_v16/gmw_v16_hab_add.geojson"
+gmw_hab_add_vec_lyr = "gmw_v16_hab_add"
 
-gmw_hab_rm_vec_file = "../00_edits/edits_v14_v15/gmw_v15_hab_rm.geojson"
-gmw_hab_rm_vec_lyr = "gmw_v15_hab_rm"
+#gmw_hab_rm_vec_file = "../00_edits/edits_v14_v15/gmw_v15_hab_rm.geojson"
+#gmw_hab_rm_vec_lyr = "gmw_v15_hab_rm"
 
-gmw_hab_version = "v14_to_v15"
+gmw_hab_version = "v15_to_v16"
 
 add_vec_ds_obj, add_vec_lyr_obj = rsgislib.vectorutils.read_vec_lyr_to_mem(
     vec_file=gmw_hab_add_vec_file, vec_lyr=gmw_hab_add_vec_lyr
 )
 
-rm_vec_ds_obj, rm_vec_lyr_obj = rsgislib.vectorutils.read_vec_lyr_to_mem(
-    vec_file=gmw_hab_rm_vec_file, vec_lyr=gmw_hab_rm_vec_lyr
-)
+#rm_vec_ds_obj, rm_vec_lyr_obj = rsgislib.vectorutils.read_vec_lyr_to_mem(
+#    vec_file=gmw_hab_rm_vec_file, vec_lyr=gmw_hab_rm_vec_lyr
+#)
 
 
 gmw_tiles_vec_file = "../01_gmw_tiles/gmw_degree_tiles.geojson"
@@ -68,9 +68,9 @@ for tile in tiles:
     if not os.path.exists(out_add_img):
         rasterise_vec_to_tile([add_vec_lyr_obj, base_img, out_add_img])
 
-    out_rm_img = os.path.join(out_rm_dir, f"gmw_{tile}_rm_hab_{gmw_hab_version}.tif")
-    if not os.path.exists(out_rm_img):
-        rasterise_vec_to_tile([rm_vec_lyr_obj, base_img, out_rm_img])
+    #out_rm_img = os.path.join(out_rm_dir, f"gmw_{tile}_rm_hab_{gmw_hab_version}.tif")
+    #if not os.path.exists(out_rm_img):
+    #    rasterise_vec_to_tile([rm_vec_lyr_obj, base_img, out_rm_img])
 
 add_vec_ds_obj = None
-rm_vec_ds_obj = None
+#rm_vec_ds_obj = None
