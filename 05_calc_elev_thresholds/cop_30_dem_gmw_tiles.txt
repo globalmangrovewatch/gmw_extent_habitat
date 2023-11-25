@@ -1,2 +1,5 @@
-Copernicus_DSM_10_N31_00_E130_00.tar
-Copernicus_DSM_10_N34_00_E138_00.tar
+Copernicus_DSM_10_N29_00_E140_00.tar
+Copernicus_DSM_10_S01_00_W097_00.tar
+Copernicus_DSM_10_S01_00_W096_00.tar
+Copernicus_DSM_10_S02_00_W096_00.tar
+Copernicus_DSM_10_N16_00_E114_00.tar
