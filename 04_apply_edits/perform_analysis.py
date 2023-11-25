@@ -16,7 +16,7 @@ class ProcessCmd(PBPTQProcessTool):
         base_hab_img = self.params["hab_img"]
         if not os.path.exists(base_hab_img):
             base_hab_img = self.params["base_img"]
-
+        """
         band_defns = list()
         band_defns.append(rsgislib.imagecalc.BandDefn("hab", base_hab_img, 1))
         band_defns.append(rsgislib.imagecalc.BandDefn("add", self.params["add_img"], 1))
@@ -27,6 +27,17 @@ class ProcessCmd(PBPTQProcessTool):
             "KEA",
             rsgislib.TYPE_8UINT,
             band_defns,
+        )
+        """
+        band_defns = list()
+        band_defns.append(rsgislib.imagecalc.BandDefn("hab", base_hab_img, 1))
+        band_defns.append(rsgislib.imagecalc.BandDefn("add", self.params["add_img"], 1))
+        rsgislib.imagecalc.band_math(
+                self.params["out_img"],
+                "add==1?1:hab",
+                "KEA",
+                rsgislib.TYPE_8UINT,
+                band_defns,
         )
         rsgislib.rastergis.pop_rat_img_stats(
             clumps_img=self.params["out_img"],
@@ -41,7 +52,7 @@ class ProcessCmd(PBPTQProcessTool):
             "base_img",
             "hab_img",
             "add_img",
-            "rm_img",
+            #"rm_img",
             "out_img",
         ]
 
