@@ -17,7 +17,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
         base_tiles = glob.glob(kwargs["base_tiles"])
         for base_img in base_tiles:
             basename = rsgislib.tools.filetools.get_file_basename(base_img)
-            gmw_hab_img = os.path.join(kwargs["gmw_hab_msk"], f"gmw_{basename}_hab_v18.kea")
+            gmw_hab_img = os.path.abspath(os.path.join(kwargs["gmw_hab_msk"], f"gmw_{basename}_hab_v18.kea"))
             gmw_v4_img = os.path.join(kwargs["gmw_fnl_dir"], f"{basename}_gmw_v4_fnl.kea")
             out_img = os.path.join(kwargs["out_dir"], f"{basename}_gmw_v4_hab_mis.kea")
             if not os.path.exists(out_img):
@@ -32,7 +32,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
         # (e.g., input / output directories)
         self.gen_command_info(
             base_tiles="../../01_gmw_tiles/base_tiles/*.tif",
-            gmw_hab_msk="../../data/gmw_hab_v18_tiles/",
+            gmw_hab_msk="../../../data/gmw_hab_v18_tiles/",
             gmw_fnl_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_v4019_fnl_tiles",
             out_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_v4019_mis_hab_tiles",
         )
