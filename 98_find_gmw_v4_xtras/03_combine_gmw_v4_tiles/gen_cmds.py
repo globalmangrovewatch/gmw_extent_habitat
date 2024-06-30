@@ -17,9 +17,9 @@ class GenCmds(PBPTGenQProcessToolCmds):
         base_tiles = glob.glob(kwargs["base_tiles"])
         for base_img in base_tiles:
             basename = rsgislib.tools.filetools.get_file_basename(base_img)
-            gmw_v4_img = os.path.join(kwargs["out_dir"], f"{basename}_gmw_v4.kea")
+            gmw_v4_img = os.path.join(kwargs["gmw_v4_dir"], f"{basename}_gmw_v4.kea")
             gmw_v4_edits_img = os.path.join(
-                kwargs["out_dir"], f"{basename}_gmw_v4_edits.kea"
+                kwargs["gmw_v4_edits"], f"{basename}_gmw_v4_edits.kea"
             )
             out_img = os.path.join(kwargs["out_dir"], f"{basename}_gmw_v4_fnl.kea")
             if not os.path.exists(out_img):
