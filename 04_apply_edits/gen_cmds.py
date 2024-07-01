@@ -54,15 +54,15 @@ class GenCmds(PBPTGenQProcessToolCmds):
         self.gen_command_info(
             gmw_base_tiles_dir="../01_gmw_tiles/base_tiles",
             add_dir="../03_rasterise_hab_edits/gmw_hab_adds",
-            #rm_dir="../03_rasterise_hab_edits/gmw_hab_rms",
-            old_hab_dir="../../data/gmw_hab_v17_tiles",
-            gmw_hab_prev_version="v17",
-            gmw_hab_edit_version="v17_to_v18",
-            gmw_hab_new_version="v18",
+            rm_dir="../03_rasterise_hab_edits/gmw_hab_rms",
+            old_hab_dir="../../data/gmw_hab_v18_tiles",
+            gmw_hab_prev_version="v18",
+            gmw_hab_edit_version="v18_to_v19",
+            gmw_hab_new_version="v19",
             gmw_tiles_vec_file="../01_gmw_tiles/gmw_degree_tiles.geojson",
             gmw_tile_vec_lyr="gmw_degree_tiles",
             #out_dir="gmw_hab_tiles",
-            out_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v18_tiles",
+            out_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v19_tiles",
         )
 
         self.pop_params_db()
@@ -70,7 +70,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
         self.create_shell_exe(
             run_script="run_exe_analysis.sh",  # The file to call to run analysis
             cmds_sh_file="pbpt_cmds_lst.sh",  # The list of commands to be run.
-            n_cores=10,  # The number of cores to use for analysis.
+            n_cores=25,  # The number of cores to use for analysis.
             db_info_file="pbpt_lcl_db_info.json",
         )
 

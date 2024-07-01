@@ -12,10 +12,10 @@ out_dir = "gmw_hab_vec_tiles"
 if not os.path.exists(out_dir):
     os.mkdir(out_dir)
 
-hab_dir = "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v18_tiles"
+hab_dir = "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v19_tiles"
 #hab_dir = "../04_apply_edits/gmw_hab_tiles"
 
-gmw_hab_version = "v18"
+gmw_hab_version = "v19"
 
 gmw_tiles_vec_file = "../01_gmw_tiles/gmw_degree_tiles.geojson"
 gmw_tile_vec_lyr = "gmw_degree_tiles"
