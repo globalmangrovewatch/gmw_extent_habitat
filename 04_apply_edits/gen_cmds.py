@@ -29,10 +29,10 @@ class GenCmds(PBPTGenQProcessToolCmds):
                 kwargs["add_dir"],
                 f"gmw_{tile}_add_hab_{kwargs['gmw_hab_edit_version']}.tif",
             )
-            #rm_img = os.path.join(
-            #    kwargs["rm_dir"],
-            #    f"gmw_{tile}_rm_hab_{kwargs['gmw_hab_edit_version']}.tif",
-            #)
+            rm_img = os.path.join(
+                kwargs["rm_dir"],
+                f"gmw_{tile}_rm_hab_{kwargs['gmw_hab_edit_version']}.tif",
+            )
 
             #out_img = os.path.join(
             #    kwargs["out_dir"],
@@ -44,7 +44,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
                 c_dict["base_img"] = base_img
                 c_dict["hab_img"] = hab_img
                 c_dict["add_img"] = add_img
-                #c_dict["rm_img"] = rm_img
+                c_dict["rm_img"] = rm_img
                 c_dict["out_img"] = out_img
                 self.params.append(c_dict)
 
