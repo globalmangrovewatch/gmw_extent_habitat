@@ -32,9 +32,9 @@ class GenCmds(PBPTGenQProcessToolCmds):
         # (e.g., input / output directories)
         self.gen_command_info(
             base_tiles="../../01_gmw_tiles/base_tiles/*.tif",
-            gmw_hab_msk="../../../data/gmw_hab_v18_tiles/",
-            gmw_fnl_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_v4019_fnl_tiles",
-            out_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_v4019_mis_hab_tiles",
+            gmw_hab_msk="../../../data/gmw_hab_v21_tiles/",
+            gmw_fnl_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_v4021_tiles",
+            out_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_v4021_mis_hab_tiles",
         )
 
         self.pop_params_db()
