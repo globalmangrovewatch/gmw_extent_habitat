@@ -17,6 +17,7 @@ class ProcessCmd(PBPTQProcessTool):
         if not os.path.exists(base_hab_img):
             base_hab_img = self.params["base_img"]
 
+        """
         band_defns = list()
         band_defns.append(rsgislib.imagecalc.BandDefn("hab", base_hab_img, 1))
         band_defns.append(rsgislib.imagecalc.BandDefn("add", self.params["add_img"], 1))
@@ -39,7 +40,7 @@ class ProcessCmd(PBPTQProcessTool):
                 rsgislib.TYPE_8UINT,
                 band_defns,
         )
-        """
+
         rsgislib.rastergis.pop_rat_img_stats(
             clumps_img=self.params["out_img"],
             add_clr_tab=True,
