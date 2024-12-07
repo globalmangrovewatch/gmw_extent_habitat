@@ -29,7 +29,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
                     f"gmw_{tile}_hab_{kwargs['hab_version']}.kea",
             )
 
-            out_img = os.path.join(kwargs["out_dir"], f"gmw_{tile}_hab_{kwargs['gmw_hab_new_version']}.kea")
+            out_img = os.path.join(kwargs["out_dir"], f"gmw_{tile}_hab_diff_{kwargs['base_hab_version']}_{kwargs['hab_version']}.kea")
             if not os.path.exists(out_img):
                 c_dict = dict()
                 c_dict["base_hab_img"] = base_hab_img
