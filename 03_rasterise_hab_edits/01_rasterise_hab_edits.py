@@ -41,8 +41,8 @@ if not os.path.exists(out_rm_dir):
 gmw_hab_add_vec_file = "../00_edits/edits_v20_v21/gmw_v21_hab_add.geojson"
 gmw_hab_add_vec_lyr = "gmw_v21_hab_add"
 
-#gmw_hab_rm_vec_file = "../00_edits/edits_v19_v20/gmw_v20_hab_rm.geojson"
-#gmw_hab_rm_vec_lyr = "gmw_v20_hab_rm"
+# gmw_hab_rm_vec_file = "../00_edits/edits_v19_v20/gmw_v20_hab_rm.geojson"
+# gmw_hab_rm_vec_lyr = "gmw_v20_hab_rm"
 
 gmw_hab_version = "v20_to_v21"
 
@@ -50,9 +50,9 @@ add_vec_ds_obj, add_vec_lyr_obj = rsgislib.vectorutils.read_vec_lyr_to_mem(
     vec_file=gmw_hab_add_vec_file, vec_lyr=gmw_hab_add_vec_lyr
 )
 
-#rm_vec_ds_obj, rm_vec_lyr_obj = rsgislib.vectorutils.read_vec_lyr_to_mem(
+# rm_vec_ds_obj, rm_vec_lyr_obj = rsgislib.vectorutils.read_vec_lyr_to_mem(
 #    vec_file=gmw_hab_rm_vec_file, vec_lyr=gmw_hab_rm_vec_lyr
-#)
+# )
 
 
 gmw_tiles_vec_file = "../01_gmw_tiles/gmw_degree_tiles.geojson"
@@ -68,8 +68,8 @@ for tile in tiles:
     if not os.path.exists(out_add_img):
         rasterise_vec_to_tile([add_vec_lyr_obj, base_img, out_add_img])
 
-    #out_rm_img = os.path.join(out_rm_dir, f"gmw_{tile}_rm_hab_{gmw_hab_version}.tif")
-    #if not os.path.exists(out_rm_img):
+    # out_rm_img = os.path.join(out_rm_dir, f"gmw_{tile}_rm_hab_{gmw_hab_version}.tif")
+    # if not os.path.exists(out_rm_img):
     #    rasterise_vec_to_tile([rm_vec_lyr_obj, base_img, out_rm_img])
 
 add_vec_ds_obj = None
