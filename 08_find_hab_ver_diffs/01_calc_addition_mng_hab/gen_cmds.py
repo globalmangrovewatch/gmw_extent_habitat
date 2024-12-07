@@ -41,6 +41,8 @@ class GenCmds(PBPTGenQProcessToolCmds):
         # Could Pass info to gen_command_info function
         # (e.g., input / output directories)
         self.gen_command_info(
+            gmw_tiles_vec_file="../01_gmw_tiles/gmw_degree_tiles.geojson",
+            gmw_tile_vec_lyr="gmw_degree_tiles",
             gmw_base_tiles_dir="../01_gmw_tiles/base_tiles",
             base_hab_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v20_tiles",
             hab_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v22_tiles",
