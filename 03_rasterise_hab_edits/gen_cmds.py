@@ -39,17 +39,17 @@ class GenCmds(PBPTGenQProcessToolCmds):
         self.gen_command_info(tiles_vec_file="../01_gmw_tiles/gmw_degree_tiles.geojson",
                               tiles_vec_lyr="gmw_degree_tiles",
                               ref_img_dir="../01_gmw_tiles/base_tiles",
-                              edits_vec_file = "../00_edits/edits_v21_v22/gmw_v22_hab_add.geojson",
-                              edits_vec_lyr="gmw_v22_hab_add",
-                              out_img_end="add_hab_v21_to_v22",
+                              edits_vec_file = "../00_edits/edits_v22_v23/gmw_v23_hab_add.geojson",
+                              edits_vec_lyr="gmw_v23_hab_add",
+                              out_img_end="add_hab_v22_to_v23",
                               out_dir="gmw_hab_adds")
         """
         self.gen_command_info(tiles_vec_file="../01_gmw_tiles/gmw_degree_tiles.geojson",
                               tiles_vec_lyr="gmw_degree_tiles",
                               ref_img_dir="../01_gmw_tiles/base_tiles",
-                              edits_vec_file="../00_edits/edits_v21_v22/gmw_v22_hab_rm.geojson",
-                              edits_vec_lyr="gmw_v22_hab_rm",
-                              out_img_end="rm_hab_v21_to_v22",
+                              edits_vec_file="../00_edits/edits_v22_v23/gmw_v23_hab_rm.geojson",
+                              edits_vec_lyr="gmw_v23_hab_rm",
+                              out_img_end="rm_hab_v22_to_v23",
                               out_dir="gmw_hab_rm")
         """
         self.pop_params_db()
