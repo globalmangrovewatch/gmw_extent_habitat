@@ -26,7 +26,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
             )
             hab_img = os.path.join(
                     kwargs["hab_dir"],
-                    f"gmw_{tile}_hab_{kwargs['hab_version']}.kea",
+                    f"gmw_{tile}_hab_{kwargs['hab_version']}.tif",
             )
 
             out_img = os.path.join(kwargs["out_dir"], f"gmw_{tile}_hab_diff_{kwargs['base_hab_version']}_{kwargs['hab_version']}.kea")

@@ -2,6 +2,7 @@ import logging
 import os
 import rsgislib.rastergis
 import rsgislib.imagecalc
+import rsgislib.imageutils
 
 from pbprocesstools.pbpt_q_process import PBPTQProcessTool
 
@@ -13,6 +14,8 @@ class ProcessCmd(PBPTQProcessTool):
         super().__init__(cmd_name="perform_analysis.py", descript=None)
 
     def do_processing(self, **kwargs):
+        rsgislib.imageutils.set_env_vars_lzw_gtiff_outs()
+
         base_hab_img = self.params["hab_img"]
         if not os.path.exists(base_hab_img):
             base_hab_img = self.params["base_img"]
@@ -25,7 +28,7 @@ class ProcessCmd(PBPTQProcessTool):
         rsgislib.imagecalc.band_math(
             self.params["out_img"],
             "add==1?1:rm==1?0:hab",
-            "KEA",
+            "GTIFF",
             rsgislib.TYPE_8UINT,
             band_defns,
         )
@@ -36,17 +39,22 @@ class ProcessCmd(PBPTQProcessTool):
         rsgislib.imagecalc.band_math(
                 self.params["out_img"],
                 "add==1?1:hab",
-                "KEA",
+                "GTIFF",
                 rsgislib.TYPE_8UINT,
                 band_defns,
         )
 
+        rsgislib.imageutils.pop_thmt_img_stats(
+            input_img = self.params["out_img"], add_clr_tab = True, calc_pyramids = True, ignore_zero = True)
+
+        """
         rsgislib.rastergis.pop_rat_img_stats(
             clumps_img=self.params["out_img"],
             add_clr_tab=True,
             calc_pyramids=True,
             ignore_zero=True,
         )
+        """
 
     def required_fields(self, **kwargs):
         # Return a list of the required fields which will be checked
