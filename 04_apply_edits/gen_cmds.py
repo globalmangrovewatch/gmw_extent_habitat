@@ -55,7 +55,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
             gmw_base_tiles_dir="../01_gmw_tiles/base_tiles",
             add_dir="../03_rasterise_hab_edits/gmw_hab_adds",
             rm_dir="../03_rasterise_hab_edits/gmw_hab_rms",
-            old_hab_dir="../../data/gmw_hab_v21_tiles",
+            old_hab_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v22_tiles",
             gmw_hab_prev_version="v22",
             gmw_hab_edit_version="v22_to_v23",
             gmw_hab_new_version="v23",
