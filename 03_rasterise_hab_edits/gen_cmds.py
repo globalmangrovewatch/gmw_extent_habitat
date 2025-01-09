@@ -39,9 +39,9 @@ class GenCmds(PBPTGenQProcessToolCmds):
         self.gen_command_info(tiles_vec_file="../01_gmw_tiles/gmw_degree_tiles.geojson",
                               tiles_vec_lyr="gmw_degree_tiles",
                               ref_img_dir="../01_gmw_tiles/base_tiles",
-                              edits_vec_file = "../00_edits/edits_v23_v24/gmw_v24_hab_add.geojson",
-                              edits_vec_lyr="gmw_v24_hab_add",
-                              out_img_end="add_hab_v23_to_v24",
+                              edits_vec_file = "../00_edits/edits_v24_v25/gmw_v25_hab_add.geojson",
+                              edits_vec_lyr="gmw_v25_hab_add",
+                              out_img_end="add_hab_v24_to_v25",
                               out_dir="gmw_hab_adds")
         """
         self.gen_command_info(tiles_vec_file="../01_gmw_tiles/gmw_degree_tiles.geojson",
