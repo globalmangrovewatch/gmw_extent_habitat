@@ -27,11 +27,11 @@ class GenCmds(PBPTGenQProcessToolCmds):
             )
             add_img = os.path.join(
                 kwargs["add_dir"],
-                f"gmw_{tile}_add_hab_{kwargs['gmw_hab_edit_version']}.tif",
+                f"gmw_{tile}_add_hab_{kwargs['gmw_hab_edit_version']}.kea",
             )
             rm_img = os.path.join(
                 kwargs["rm_dir"],
-                f"gmw_{tile}_rm_hab_{kwargs['gmw_hab_edit_version']}.tif",
+                f"gmw_{tile}_rm_hab_{kwargs['gmw_hab_edit_version']}.kea",
             )
 
             #out_img = os.path.join(
@@ -55,7 +55,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
             gmw_base_tiles_dir="../01_gmw_tiles/base_tiles",
             add_dir="../03_rasterise_hab_edits/gmw_hab_adds",
             rm_dir="../03_rasterise_hab_edits/gmw_hab_rms",
-            old_hab_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v24_tiles",
+            old_hab_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v25_tiles",
             gmw_hab_prev_version="v25",
             gmw_hab_edit_version="v25_to_v26",
             gmw_hab_new_version="v26",
