@@ -17,14 +17,16 @@ class GenCmds(PBPTGenQProcessToolCmds):
             os.mkdir(kwargs["out_dir"])
 
         tiles = rsgislib.vectorattrs.read_vec_column(
-                vec_file=kwargs["tiles_vec_file"],
-                vec_lyr=kwargs["tiles_vec_lyr"],
-                att_column="tile_name"
+            vec_file=kwargs["tiles_vec_file"],
+            vec_lyr=kwargs["tiles_vec_lyr"],
+            att_column="tile_name",
         )
 
         for tile in tiles:
             base_img = os.path.join(kwargs["ref_img_dir"], f"{tile}.tif")
-            out_img = os.path.join(kwargs["out_dir"], f"gmw_{tile}_{kwargs['out_img_end']}.tif")
+            out_img = os.path.join(
+                kwargs["out_dir"], f"gmw_{tile}_{kwargs['out_img_end']}.kea"
+            )
             if not os.path.exists(out_img):
                 c_dict = dict()
                 c_dict["ref_img"] = base_img
@@ -36,13 +38,15 @@ class GenCmds(PBPTGenQProcessToolCmds):
     def run_gen_commands(self):
         # Could Pass info to gen_command_info function
         # (e.g., input / output directories)
-        self.gen_command_info(tiles_vec_file="../01_gmw_tiles/gmw_degree_tiles.geojson",
-                              tiles_vec_lyr="gmw_degree_tiles",
-                              ref_img_dir="../01_gmw_tiles/base_tiles",
-                              edits_vec_file = "../00_edits/edits_v25_v26/gmw_v26_hab_add.geojson",
-                              edits_vec_lyr="gmw_v26_hab_add",
-                              out_img_end="add_hab_v25_to_v26",
-                              out_dir="gmw_hab_adds")
+        self.gen_command_info(
+            tiles_vec_file="../01_gmw_tiles/gmw_degree_tiles.geojson",
+            tiles_vec_lyr="gmw_degree_tiles",
+            ref_img_dir="../01_gmw_tiles/base_tiles",
+            edits_vec_file="../00_edits/edits_v25_v26/gmw_v26_hab_add.geojson",
+            edits_vec_lyr="gmw_v26_hab_add",
+            out_img_end="add_hab_v25_to_v26",
+            out_dir="gmw_hab_adds",
+        )
         """
         self.gen_command_info(tiles_vec_file="../01_gmw_tiles/gmw_degree_tiles.geojson",
                               tiles_vec_lyr="gmw_degree_tiles",

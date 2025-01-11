@@ -2,6 +2,7 @@ import logging
 import os
 import rsgislib.imageutils
 import rsgislib.vectorutils.createrasters
+import rsgislib.rastergis
 
 from pbprocesstools.pbpt_q_process import PBPTQProcessTool
 
@@ -18,7 +19,7 @@ class ProcessCmd(PBPTQProcessTool):
             vec_lyr=self.params["vec_lyr"],
             input_img=self.params["ref_img"],
             output_img=self.params["out_img"],
-            gdalformat="GTIFF",
+            gdalformat="KEA",
             burn_val=1,
             datatype=rsgislib.TYPE_8UINT,
             att_column=None,
@@ -26,12 +27,22 @@ class ProcessCmd(PBPTQProcessTool):
             thematic=True,
             no_data_val=0,
         )
+
+        rsgislib.rastergis.pop_rat_img_stats(
+            clumps_img=self.params["out_img"],
+            add_clr_tab=True,
+            calc_pyramids=True,
+            ignore_zero=True,
+            rat_band=1,
+        )
+        """
         rsgislib.imageutils.pop_thmt_img_stats(
             self.params["out_img"],
             add_clr_tab=True,
             calc_pyramids=True,
             ignore_zero=True,
         )
+        """
 
     def required_fields(self, **kwargs):
         # Return a list of the required fields which will be checked
