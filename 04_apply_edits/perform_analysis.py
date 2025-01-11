@@ -39,11 +39,12 @@ class ProcessCmd(PBPTQProcessTool):
         rsgislib.imagecalc.band_math(
                 self.params["out_img"],
                 "add==1?1:hab",
-                "GTIFF",
+                "KEA",
                 rsgislib.TYPE_8UINT,
                 band_defns,
         )
 
+        """
         rsgislib.imageutils.pop_thmt_img_stats(
             input_img = self.params["out_img"], add_clr_tab = True, calc_pyramids = True, ignore_zero = True)
 
@@ -54,7 +55,7 @@ class ProcessCmd(PBPTQProcessTool):
             calc_pyramids=True,
             ignore_zero=True,
         )
-        """
+        
 
     def required_fields(self, **kwargs):
         # Return a list of the required fields which will be checked

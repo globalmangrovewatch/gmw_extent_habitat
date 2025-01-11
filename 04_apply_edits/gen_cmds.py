@@ -38,7 +38,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
             #    kwargs["out_dir"],
             #    f"gmw_{tile}_hab_{kwargs['gmw_hab_new_version']}_tmp.kea",
             #)
-            out_img = os.path.join(kwargs["out_dir"], f"gmw_{tile}_hab_{kwargs['gmw_hab_new_version']}.tif")
+            out_img = os.path.join(kwargs["out_dir"], f"gmw_{tile}_hab_{kwargs['gmw_hab_new_version']}.kea")
             if not os.path.exists(out_img):
                 c_dict = dict()
                 c_dict["base_img"] = base_img
@@ -56,13 +56,13 @@ class GenCmds(PBPTGenQProcessToolCmds):
             add_dir="../03_rasterise_hab_edits/gmw_hab_adds",
             rm_dir="../03_rasterise_hab_edits/gmw_hab_rms",
             old_hab_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v24_tiles",
-            gmw_hab_prev_version="v24",
-            gmw_hab_edit_version="v24_to_v25",
-            gmw_hab_new_version="v25",
+            gmw_hab_prev_version="v25",
+            gmw_hab_edit_version="v25_to_v26",
+            gmw_hab_new_version="v26",
             gmw_tiles_vec_file="../01_gmw_tiles/gmw_degree_tiles.geojson",
             gmw_tile_vec_lyr="gmw_degree_tiles",
             #out_dir="gmw_hab_tiles",
-            out_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v25_tiles",
+            out_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v26_tiles",
         )
 
         self.pop_params_db()

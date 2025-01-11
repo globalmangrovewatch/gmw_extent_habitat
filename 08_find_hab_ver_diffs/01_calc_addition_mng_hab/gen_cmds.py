@@ -26,7 +26,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
             )
             hab_img = os.path.join(
                     kwargs["hab_dir"],
-                    f"gmw_{tile}_hab_{kwargs['hab_version']}.tif",
+                    f"gmw_{tile}_hab_{kwargs['hab_version']}.kea",
             )
 
             out_img = os.path.join(kwargs["out_dir"], f"gmw_{tile}_hab_diff_{kwargs['base_hab_version']}_{kwargs['hab_version']}.kea")
@@ -45,10 +45,10 @@ class GenCmds(PBPTGenQProcessToolCmds):
             gmw_tile_vec_lyr="gmw_degree_tiles",
             gmw_base_tiles_dir="../01_gmw_tiles/base_tiles",
             base_hab_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v20_tiles",
-            hab_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v25_tiles",
+            hab_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v26_tiles",
             base_hab_version="v20",
-            hab_version="v25",
-            out_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_diff_v20_v25_tiles",
+            hab_version="v26",
+            out_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_diff_v20_v26_tiles",
         )
 
         self.pop_params_db()
