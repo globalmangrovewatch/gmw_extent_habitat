@@ -55,14 +55,14 @@ class GenCmds(PBPTGenQProcessToolCmds):
             gmw_base_tiles_dir="../01_gmw_tiles/base_tiles",
             add_dir="../03_rasterise_hab_edits/gmw_hab_adds",
             rm_dir="../03_rasterise_hab_edits/gmw_hab_rms",
-            old_hab_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v25_tiles",
-            gmw_hab_prev_version="v25",
-            gmw_hab_edit_version="v25_to_v26",
-            gmw_hab_new_version="v26",
+            old_hab_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v26_tiles",
+            gmw_hab_prev_version="v26",
+            gmw_hab_edit_version="v26_to_v27",
+            gmw_hab_new_version="v27",
             gmw_tiles_vec_file="../01_gmw_tiles/gmw_degree_tiles.geojson",
             gmw_tile_vec_lyr="gmw_degree_tiles",
             #out_dir="gmw_hab_tiles",
-            out_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v26_tiles",
+            out_dir="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v27_tiles",
         )
 
         self.pop_params_db()

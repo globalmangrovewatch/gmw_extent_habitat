@@ -36,7 +36,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
     def run_gen_commands(self):
         # Could Pass info to gen_command_info function
         # (e.g., input / output directories)
-        self.gen_command_info(mng_imgs="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v26_tiles/*.kea",
+        self.gen_command_info(mng_imgs="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_v27_tiles/*.kea",
             out_dir="gmw_hab_vec_tiles")
 
         self.pop_params_db()
