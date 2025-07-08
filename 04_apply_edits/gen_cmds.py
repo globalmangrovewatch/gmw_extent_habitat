@@ -23,7 +23,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
             base_img = os.path.join(kwargs["gmw_base_tiles_dir"], f"{tile}.tif")
             hab_img = os.path.join(
                 kwargs["old_hab_dir"],
-                f"gmw_{tile}_hab_{kwargs['gmw_hab_prev_version']}.tif",
+                f"gmw_{tile}_hab_{kwargs['gmw_hab_prev_version']}.kea",
             )
             add_img = os.path.join(
                 kwargs["add_dir"],
