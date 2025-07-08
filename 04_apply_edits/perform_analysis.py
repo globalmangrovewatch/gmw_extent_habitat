@@ -20,35 +20,30 @@ class ProcessCmd(PBPTQProcessTool):
         if not os.path.exists(base_hab_img):
             base_hab_img = self.params["base_img"]
 
-        """
-        band_defns = list()
-        band_defns.append(rsgislib.imagecalc.BandDefn("hab", base_hab_img, 1))
-        band_defns.append(rsgislib.imagecalc.BandDefn("add", self.params["add_img"], 1))
-        band_defns.append(rsgislib.imagecalc.BandDefn("rm", self.params["rm_img"], 1))
-        rsgislib.imagecalc.band_math(
-            self.params["out_img"],
-            "add==1?1:rm==1?0:hab",
-            "GTIFF",
-            rsgislib.TYPE_8UINT,
-            band_defns,
-        )
-        """
-        band_defns = list()
-        band_defns.append(rsgislib.imagecalc.BandDefn("hab", base_hab_img, 1))
-        band_defns.append(rsgislib.imagecalc.BandDefn("add", self.params["add_img"], 1))
-        rsgislib.imagecalc.band_math(
+        if os.path.exists(self.params["rm_img"]):
+            band_defns = list()
+            band_defns.append(rsgislib.imagecalc.BandDefn("hab", base_hab_img, 1))
+            band_defns.append(rsgislib.imagecalc.BandDefn("add", self.params["add_img"], 1))
+            band_defns.append(rsgislib.imagecalc.BandDefn("rm", self.params["rm_img"], 1))
+            rsgislib.imagecalc.band_math(
                 self.params["out_img"],
-                "add==1?1:hab",
+                "add==1?1:rm==1?0:hab",
                 "KEA",
                 rsgislib.TYPE_8UINT,
                 band_defns,
-        )
+            )
+        else:
+            band_defns = list()
+            band_defns.append(rsgislib.imagecalc.BandDefn("hab", base_hab_img, 1))
+            band_defns.append(rsgislib.imagecalc.BandDefn("add", self.params["add_img"], 1))
+            rsgislib.imagecalc.band_math(
+                    self.params["out_img"],
+                    "add==1?1:hab",
+                    "KEA",
+                    rsgislib.TYPE_8UINT,
+                    band_defns,
+            )
 
-        """
-        rsgislib.imageutils.pop_thmt_img_stats(
-            input_img = self.params["out_img"], add_clr_tab = True, calc_pyramids = True, ignore_zero = True)
-
-        """
         rsgislib.rastergis.pop_rat_img_stats(
             clumps_img=self.params["out_img"],
             add_clr_tab=True,
