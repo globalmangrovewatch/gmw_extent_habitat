@@ -1,6 +1,6 @@
 {
 "type": "FeatureCollection",
-"name": "gmw_v26_hab_add",
+"name": "gmw_v27_hab_add",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 { "type": "Feature", "properties": { }, "geometry": { "type": "Polygon", "coordinates": [ [ [ 133.155606918490577, -5.410185522258771 ], [ 133.153381450108839, -5.41173047551551 ], [ 133.156287433615546, -5.414507712917506 ], [ 133.158439332794586, -5.4103878375662 ], [ 133.155606918490577, -5.410185522258771 ] ] ] } },
