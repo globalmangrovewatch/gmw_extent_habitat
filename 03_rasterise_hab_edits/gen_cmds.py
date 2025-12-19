@@ -44,7 +44,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
             ref_img_dir="../01_gmw_tiles/base_tiles",
             edits_vec_file="../00_edits/edits_v27_v28/gmw_v28_hab_add.geojson",
             edits_vec_lyr="gmw_v28_hab_add",
-            out_img_end="add_hab_v26_to_v27",
+            out_img_end="add_hab_v27_to_v28",
             out_dir="gmw_hab_adds",
         )
         """
