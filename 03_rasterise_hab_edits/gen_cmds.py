@@ -42,12 +42,12 @@ class GenCmds(PBPTGenQProcessToolCmds):
             tiles_vec_file="../01_gmw_tiles/gmw_degree_tiles.geojson",
             tiles_vec_lyr="gmw_degree_tiles",
             ref_img_dir="../01_gmw_tiles/base_tiles",
-            edits_vec_file="../00_edits/edits_v26_v27/gmw_v27_hab_add.geojson",
-            edits_vec_lyr="gmw_v27_hab_add",
+            edits_vec_file="../00_edits/edits_v27_v28/gmw_v28_hab_add.geojson",
+            edits_vec_lyr="gmw_v28_hab_add",
             out_img_end="add_hab_v26_to_v27",
             out_dir="gmw_hab_adds",
         )
-
+        """
         self.gen_command_info(tiles_vec_file="../01_gmw_tiles/gmw_degree_tiles.geojson",
                               tiles_vec_lyr="gmw_degree_tiles",
                               ref_img_dir="../01_gmw_tiles/base_tiles",
@@ -55,6 +55,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
                               edits_vec_lyr="gmw_v27_hab_rm",
                               out_img_end="rm_hab_v26_to_v27",
                               out_dir="gmw_hab_rm")
+        """
 
         self.pop_params_db()
 
