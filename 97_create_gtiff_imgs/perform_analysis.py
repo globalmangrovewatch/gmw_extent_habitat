@@ -14,6 +14,7 @@ class ProcessCmd(PBPTQProcessTool):
 
     def do_processing(self, **kwargs):
         hab_pxls = rsgislib.imagecalc.count_pxls_of_val(self.params["img"], vals =[1], img_band = 1)[0]
+        print(f"hab_pxls = {hab_pxls}")
         if hab_pxls > 0:
             cmd = (
                 "gdal_translate -of COG -co COMPRESS=LZW "
