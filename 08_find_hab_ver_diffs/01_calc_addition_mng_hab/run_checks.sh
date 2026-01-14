@@ -1,1 +1,1 @@
-rsgischkgdalfile.py -i "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_diff_v27_v28_tiles/*.kea" --rmerr --nbands 1 --epsg 4326 --chkproj --readimg --printerrs
+rsgischkgdalfile.py -i "/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_diff_v28_v29_tiles/*.kea" --rmerr --nbands 1 --epsg 4326 --chkproj --readimg --printerrs

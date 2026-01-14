@@ -36,7 +36,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
     def run_gen_commands(self):
         # Could Pass info to gen_command_info function
         # (e.g., input / output directories)
-        self.gen_command_info(mng_imgs="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_diff_v27_v28_tiles/*.kea",
+        self.gen_command_info(mng_imgs="/bigdata/petebunting/GlobalMangroveWatch/gmw_hab_extent/data/gmw_hab_diff_v28_v29_tiles/*.kea",
             out_dir="gmw_hab_diff_vec_tiles")
 
         self.pop_params_db()
@@ -44,7 +44,7 @@ class GenCmds(PBPTGenQProcessToolCmds):
         self.create_shell_exe(
             run_script="run_exe_analysis.sh",  # The file to call to run analysis
             cmds_sh_file="pbpt_cmds_lst.sh",  # The list of commands to be run.
-            n_cores=50,  # The number of cores to use for analysis.
+            n_cores=40,  # The number of cores to use for analysis.
             db_info_file="pbpt_lcl_db_info.json",
         )
 
