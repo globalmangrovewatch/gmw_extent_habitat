@@ -3,8 +3,8 @@ import glob
 
 vec_files = glob.glob("gmw_hab_vec_tiles/*.gpkg")
 
-out_vec_file = "gmw_hab_msk_v29.gpkg"
-out_vec_lyr = "gmw_hab_msk_v29"
+out_vec_file = "gmw_hab_msk_v30.gpkg"
+out_vec_lyr = "gmw_hab_msk_v30"
 
 rsgislib.vectorutils.merge_vector_files(
     vec_files,
