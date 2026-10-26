@@ -28,6 +28,7 @@ collection = pystac.Collection(
 
 # 2. Build STAC Items for each COG using rio-stac
 cog_paths = glob.glob(f"{BASE_URL}/*.tif")
+print(f"There are {len(cog_paths)} images")
 
 for img_path in tqdm.tqdm(cog_paths):
     img_name = rsgislib.tools.filetools.get_file_basename(img_path)
